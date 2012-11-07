@@ -1,0 +1,6 @@
+[submodule "deps/shadowsocks"]
+	path = deps/shadowsocks
+	url = git://github.com/clowwindy/shadowsocks.git
+[submodule "deps/shadowsocks-go"]
+	path = deps/shadowsocks-go
+	url = git://github.com/clowwindy/shadowsocks-go.git
