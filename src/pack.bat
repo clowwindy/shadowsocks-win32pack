@@ -2,7 +2,8 @@ mkdir ..\dist\shadowsocks
 cd ..\deps\shadowsocks-go
 call win32build.bat
 copy bin\local.exe ..\..\dist\shadowsocks\
-cd ..\..\src
+cd ..\..\
+cd src
 xcopy html ..\dist\shadowsocks\ /e
 copy config.json ..\dist\shadowsocks\
 cd ..
