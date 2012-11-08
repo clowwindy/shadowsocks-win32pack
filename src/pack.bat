@@ -3,6 +3,7 @@ cd ..\deps\shadowsocks-go
 call win32build.bat
 copy bin\local.exe ..\..\dist\shadowsocks\
 cd ..\..\
+copy deps\shadowsocks\server.py dist\shadowsocks\
 cd src
 xcopy html ..\dist\shadowsocks\ /e
 copy config.json ..\dist\shadowsocks\
