@@ -39,18 +39,22 @@ password 请设置一个你的密码 </pre>
                 退出 putty。接下来只要 VPS 没有重启，服务端会一直运行下去。<br/>
             </li>
             <li>运行 local.exe</li>
-            <li>修改浏览器的代理设置。使用 SOCKS5 代理，地址为刚才设置的本地 socks5 端口（默认 127.0.0.1:1080）。推荐 Firefox 配合 <a
-                    href="https://addons.mozilla.org/zh-cn/firefox/addon/autoproxy/">Autoproxy</a> 使用，Chrome 配合
-                <a href="https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm">SwitchySharp</a> 使用。
+            <li>修改浏览器的代理设置。使用 SOCKS5 代理，地址为刚才设置的本地 socks5 端口（默认 127.0.0.1:1080）。<br/>
+                最简单的方法是：建一个 Chrome 的快捷方式，右键，属性，在目标的最后加上：<br/>
+            <pre class="prettyprint">
+ --proxy-server=socks5://127.0.0.1:1080</pre>
+                注意前面有个空格。然后启动 Chrome 即可。<br/>
+                推荐 Firefox 配合 <a
+                        href="https://addons.mozilla.org/zh-cn/firefox/addon/autoproxy/">Autoproxy</a> 使用，Chrome 配合
+                <a href="https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm">SwitchySharp</a>
+                使用，可以根据网址自动选择是否翻墙。注意使用的时候代理协议要选择 SOCKS<span style="color:red">5</span>（而不是 SOCKS4 或者 HTTP）。
+                IE 浏览器使用 SOCKS5 代理需要配合 PAC 文件，不推荐使用。
             </li>
         </ol>
     </div>
-
     <h2>VPS 推荐列表：</h2>
 
-
     <div class="sub">
-
         <ol>
             <li>
                 知名，稳定，速度快，比较贵，适合多人合租（推荐）：<br/>
