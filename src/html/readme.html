@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>shadowsocks 使用说明</title>
+    <link rel="stylesheet" type="text/css" href="static/prettify.css"/>
+    <link rel="stylesheet" type="text/css" href="static/common.css"/>
+    <script src="static/prettify.js"></script>
+</head>
+<body>
+
+<div id="main">
+
+    <h2>使用说明</h2>
+
+    <div class="sub">
+        <ol>
+            <li><a href="https://github.com/clowwindy/shadowsocks">shadowsocks</a> 原理是借助国外的 VPS 翻墙。国外的 VPS
+                上运行服务端，在本地运行本地端，就可以建立加密连接。如果你还没有 VPS，末尾列举了一些常见的 VPS 提供商。
+            </li>
+            <li>用文本编辑器编辑 config.json，请注意一定要修改密码。<br/>
+            <pre class="prettyprint">
+server 你的 VPS 的地址
+server_port 使用的服务端口
+local_port 本地 socks5 端口
+password 请设置一个你的密码 </pre>
+            </li>
+            <li>用 tools 目录里的 winscp 上传 server.py 和 config.json 到 VPS 上的某个目录。如果是 root 用户，放到 /root/ 下；如果是其他用户，放到 /home/用户名
+                目录下。
+            </li>
+            <li>用 tools 目录里的 putty 登录到 VPS。<br/>
+                安装 python：<br/>
+                Debian, Ubuntu:<br/>
+                <pre class="prettyprint">sudo apt-get install python</pre>
+                CentOS:<br/>
+                <pre class="prettyprint">yum install python</pre>
+                cd 进入到上传的目录，运行（注意后面的 &amp;）：<br/>
+                <pre class="prettyprint">nohup python server.py > log &amp;</pre>
+                退出 putty。接下来只要 VPS 没有重启，服务端会一直运行下去。<br/>
+            </li>
+            <li>运行 local.exe</li>
+            <li>修改浏览器的代理设置。使用 SOCKS5 代理，地址为刚才设置的本地 socks5 端口（默认 127.0.0.1:1080）。推荐 Firefox 配合 <a
+                    href="https://addons.mozilla.org/zh-cn/firefox/addon/autoproxy/">Autoproxy</a> 使用，Chrome 配合
+                <a href="https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm">SwitchySharp</a> 使用。
+            </li>
+        </ol>
+    </div>
+
+    <h2>VPS 推荐列表：</h2>
+
+
+    <div class="sub">
+
+        <ol>
+            <li>
+                知名，稳定，速度快，比较贵，适合多人合租（推荐）：<br/>
+                <a href="http://www.lunarpages.com/">Lunarpages</a>,
+                <a href="http://www.linode.com/">Linode</a>,
+                <a href="http://www.rackspace.com/">Rackspace</a>
+            </li>
+            <li>
+                不知名，便宜，偶尔不稳定，适合个人用：<br/>
+                <a href="http://www.photonvps.com/">photonvps</a>,
+                <a href="http://buyvm.net/">buyvm</a>,
+                <a href="http://virpus.com/">virpus</a>,
+                <a href="http://www.yardvps.com/">yardvps</a>,
+                <a href="http://vexxhost.com/vps.htm">vexxhost</a>
+
+            </li>
+            <li> 亚马逊 EC2 可以免费用一年，但是注册和设置比较复杂：<br/>
+                <a href="http://aws.amazon.com/ec2/">EC2</a><br/>
+
+            </li>
+            <li>
+                另外有一些免费的 VPS，可以 Google <a href="https://www.google.com/search?q=free+vps">搜索 free vps</a>，不过相对收费的来说会有各种问题。<br/>
+
+                推荐选择 Xen 或者 KVM 的 VPS，尽量不要选择 OpenVZ。<br/>
+                有关如何设置 VPS 可以 Google <a
+                    href="https://www.google.com/search?q=%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE+linode+vps">如何设置 linode
+                vps</a> ，<a
+                    href="https://www.google.com/search?q=%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%B7%E5%85%8D%E8%B4%B9+EC2">如何申请免费
+                EC2</a> 之类的关键词。<br/>
+            </li>
+        </ol>
+    </div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+div, html, body, h1, h2, h3, ol, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background: #bbb;
+    font: 13px sans-serif;
+    line-height: 2em;
+}
+
+#main {
+    margin: 20px auto;
+    width: 740px;
+    background: #fff;
+    padding: 20px 40px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2, h3 {
+    line-height: 3em;
+    font-size: 130%;
+    color: #336688;
+    padding: 5px 0;
+}
+
+a {
+    color: #36b;
+    text-decoration: none;
+}
+
+.sub {
+    margin-left: 40px;
+}
+
+pre.prettyprint {
+    border-radius: 5px;
+    padding: 5px;
+}
